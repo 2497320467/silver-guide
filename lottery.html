@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>抽奖程序</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+      margin-top: 50px;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #666;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>点击按钮进行抽奖</h1>
+    <button onclick="drawLottery()">抽奖</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function drawLottery() {
+      // 抽奖选项
+     var options = [
+  "蓝白",
+  "黑金",
+  "沉于墨",
+  "黑白",
+  "粉",
+  "白银"
+];
+
+      // 随机选取一个抽签结果
+      var randomIndex = Math.floor(Math.random() * options.length);
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = "恭喜你，你抽中了：<strong>" + options[randomIndex] + "</strong>";
+    }
+  </script>
+</body>
+</html>
